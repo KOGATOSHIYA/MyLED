@@ -53,6 +53,7 @@ static int __init init_mod(void){
         printk(KERN_ERR "class_create failed.");
         return PTR_ERR(cls);
     }
+    
     device_create(cls, NULL, dev, NULL, "myled%d",MINOR(dev));
     return 0;
 }
